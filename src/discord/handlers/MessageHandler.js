@@ -19,7 +19,7 @@ class MessageHandler {
     }
 
     this.discord.broadcastMessage({
-      username: message.member.displayName,
+      username: message.member.nickname || message.member.displayName,
       message: this.stripDiscordContent(message.content),
       replyingTo: await this.fetchReply(message),
     })
